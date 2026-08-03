@@ -10,7 +10,7 @@ const pluginPackage = 'liquid_glass_bottom_nav';
 /// TODO: replace with the real URL before publishing. Until then `bootstrap`
 /// refuses to run without an explicit `--repo`.
 const projectRepository =
-    'https://github.com/<you>/liquid_glass_bottom_nav.git';
+    'https://github.com/UjjvalGandhi/liquid_glass_bottom_nav.git';
 
 /// True while [projectRepository] is still the unfilled placeholder.
 bool get hasConfiguredRepository => !projectRepository.contains('<you>');

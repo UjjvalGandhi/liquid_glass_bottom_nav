@@ -3,7 +3,7 @@ description: "Installs liquid_glass_bottom_nav into a Flutter project and config
 version: 0.1.0
 
 # TODO: required before `dart pub publish` — must be a real, reachable URL.
-# repository: https://github.com/<you>/liquid_glass_bottom_nav
+repository: https://github.com/UjjvalGandhi/liquid_glass_bottom_navflutter pub publish --dry-run
 
 environment:
   sdk: ^3.12.1

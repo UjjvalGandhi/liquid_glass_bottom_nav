@@ -10,9 +10,9 @@ Pod::Spec.new do |s|
 Embeds a real UITabBarController so the bottom navigation renders the
 system Liquid Glass tab bar, including the morphing search tab.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/UjjvalGandhi/liquid_glass_bottom_nav'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'UjjawalGandhi' => 'ujjval2804@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'liquid_glass_bottom_nav/Sources/liquid_glass_bottom_nav/**/*'
   s.dependency 'Flutter'
