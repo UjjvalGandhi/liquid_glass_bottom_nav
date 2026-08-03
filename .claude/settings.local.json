@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcrun simctl *)",
+      "Bash(sips --cropOffset 2255 0 -c 367 1206 /private/tmp/claude-501/-Users-prasantashil-Documents-untitled/27a2786c-3dfb-4754-8bbb-3e13a4c21459/scratchpad/glass4.png --out /private/tmp/claude-501/-Users-prasantashil-Documents-untitled/27a2786c-3dfb-4754-8bbb-3e13a4c21459/scratchpad/glass4_crop.png)",
+      "Bash(python3 -c \"import PIL; print\\('PIL ok'\\)\")",
+      "Bash(python3 -c \"import Quartz; print\\('Quartz ok'\\)\")",
+      "Bash(sips --help)"
+    ]
+  }
+}
