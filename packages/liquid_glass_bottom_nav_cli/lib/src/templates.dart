@@ -7,7 +7,7 @@ String mainDartTemplate(String appName) =>
 
 const _mainDart = r'''
 import 'package:flutter/material.dart';
-import 'package:liquid_glass_bottom_nav/liquid_glass_bottom_nav.dart';
+import 'package:liquid_glass_bottom_nav_native/liquid_glass_bottom_nav_native.dart';
 
 void main() {
   runApp(const MyApp());

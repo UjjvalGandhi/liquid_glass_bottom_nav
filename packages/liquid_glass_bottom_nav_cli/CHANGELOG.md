@@ -8,7 +8,7 @@
   already wired up — `flutter create`, the dependency, the iOS deployment
   target, and a working `lib/main.dart` with a Material fallback for non-iOS
   platforms.
-* `liquid_glass install` adds `liquid_glass_bottom_nav` to an existing project
+* `liquid_glass install` adds `liquid_glass_bottom_nav_native` to an existing project
   and raises the iOS deployment target to 16.0 when needed, keeping the
   original files as `.bak`.
 * `liquid_glass doctor` reports whether the project and toolchain will render

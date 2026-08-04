@@ -1,5 +1,5 @@
-name: liquid_glass_bottom_nav_example
-description: "Demonstrates how to use the liquid_glass_bottom_nav plugin."
+name: liquid_glass_bottom_nav_native_example
+description: "Demonstrates how to use the liquid_glass_bottom_nav_native plugin."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -17,9 +17,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  liquid_glass_bottom_nav:
+  liquid_glass_bottom_nav_native:
     # When depending on this package from a real application you should use:
-    #   liquid_glass_bottom_nav: ^x.y.z
+    #   liquid_glass_bottom_nav_native: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
     # The example app is bundled with the plugin so we use a path dependency on
     # the parent directory to use the current plugin's version.

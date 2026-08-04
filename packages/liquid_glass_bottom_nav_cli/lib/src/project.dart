@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 /// The name of the plugin this tool installs.
-const pluginPackage = 'liquid_glass_bottom_nav';
+const pluginPackage = 'liquid_glass_bottom_nav_native';
 
 /// The repository `liquid_glass bootstrap` clones.
 ///

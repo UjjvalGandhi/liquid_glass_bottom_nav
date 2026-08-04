@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:liquid_glass_bottom_nav/liquid_glass_bottom_nav.dart';
+import 'package:liquid_glass_bottom_nav_native/liquid_glass_bottom_nav_native.dart';
 import 'package:neopop/neopop.dart';
 
 import 'login_screen.dart';

@@ -1,9 +1,9 @@
 name: liquid_glass_bottom_nav_cli
-description: "Installs liquid_glass_bottom_nav into a Flutter project and configures the native iOS side it needs to render."
+description: "Installs liquid_glass_bottom_nav_native into a Flutter project and configures the native iOS side it needs to render."
 version: 0.1.0
 
 # TODO: required before `dart pub publish` — must be a real, reachable URL.
-repository: https://github.com/UjjvalGandhi/liquid_glass_bottom_navflutter pub publish --dry-run
+repository: https://github.com/UjjvalGandhi/liquid_glass_bottom_nav
 
 environment:
   sdk: ^3.12.1

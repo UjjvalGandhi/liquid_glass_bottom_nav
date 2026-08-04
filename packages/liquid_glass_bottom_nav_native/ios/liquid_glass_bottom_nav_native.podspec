@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint liquid_glass_bottom_nav.podspec` to validate before publishing.
+# Run `pod lib lint liquid_glass_bottom_nav_native.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'liquid_glass_bottom_nav'
+  s.name             = 'liquid_glass_bottom_nav_native'
   s.version          = '0.1.0'
   s.summary          = 'Native iOS 26 Liquid Glass bottom tab bar for Flutter.'
   s.description      = <<-DESC
@@ -14,7 +14,7 @@ system Liquid Glass tab bar, including the morphing search tab.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'UjjawalGandhi' => 'ujjval2804@gmail.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'liquid_glass_bottom_nav/Sources/liquid_glass_bottom_nav/**/*'
+  s.source_files = 'liquid_glass_bottom_nav_native/Sources/liquid_glass_bottom_nav_native/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '16.0'
 
@@ -26,5 +26,5 @@ system Liquid Glass tab bar, including the morphing search tab.
   # required reason APIs, update the PrivacyInfo.xcprivacy file to describe your
   # plugin's privacy impact, and then uncomment this line. For more information,
   # see https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
-  # s.resource_bundles = {'liquid_glass_bottom_nav_privacy' => ['liquid_glass_bottom_nav/Sources/liquid_glass_bottom_nav/PrivacyInfo.xcprivacy']}
+  # s.resource_bundles = {'liquid_glass_bottom_nav_native_privacy' => ['liquid_glass_bottom_nav_native/Sources/liquid_glass_bottom_nav_native/PrivacyInfo.xcprivacy']}
 end

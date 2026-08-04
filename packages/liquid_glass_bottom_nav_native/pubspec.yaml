@@ -1,6 +1,6 @@
-name: liquid_glass_bottom_nav
+name: liquid_glass_bottom_nav_native
 description: "Native iOS 26 Liquid Glass bottom tab bar (real UITabBarController) with morphing search tab, for Flutter."
-version: 0.1.1
+version: 0.1.0
 
 # TODO: required before `dart pub publish` — must be a real, reachable URL.
 repository: https://github.com/UjjvalGandhi/liquid_glass_bottom_nav

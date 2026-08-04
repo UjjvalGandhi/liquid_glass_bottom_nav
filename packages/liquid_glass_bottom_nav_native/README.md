@@ -1,4 +1,4 @@
-# liquid_glass_bottom_nav
+# liquid_glass_bottom_nav_native
 
 Native iOS 26 Liquid Glass bottom tab bar for Flutter.
 

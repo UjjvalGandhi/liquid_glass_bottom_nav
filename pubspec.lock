@@ -107,10 +107,10 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.0"
-  liquid_glass_bottom_nav:
+  liquid_glass_bottom_nav_native:
     dependency: "direct main"
     description:
-      path: "packages/liquid_glass_bottom_nav"
+      path: "packages/liquid_glass_bottom_nav_native"
       relative: true
     source: path
     version: "0.1.0"

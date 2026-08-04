@@ -20,8 +20,8 @@ by anyone but you.
   ios/                                Swift Package Manager, no Podfile
   test/widget_test.dart               1 of 2 tests currently fails (see §9)
 
-packages/liquid_glass_bottom_nav/     THE PLUGIN            v0.1.0
-  lib/liquid_glass_bottom_nav.dart    Dart API (UiKitView + method channel)
+packages/liquid_glass_bottom_nav_native/     THE PLUGIN            v0.1.0
+  lib/liquid_glass_bottom_nav_native.dart    Dart API (UiKitView + method channel)
   ios/.../LiquidGlassBottomNavPlugin.swift
                                       real UITabBarController, 3 classes
   example/                            standalone example app
@@ -49,7 +49,7 @@ on an iOS 26.5 simulator).
 | # | What | Where it goes |
 |---|---|---|
 | 1 | A git repository URL | both `pubspec.yaml` files |
-| 2 | A license choice (MIT is the norm for Flutter plugins) | `packages/liquid_glass_bottom_nav/LICENSE` |
+| 2 | A license choice (MIT is the norm for Flutter plugins) | `packages/liquid_glass_bottom_nav_native/LICENSE` |
 | 3 | Author name + email | the podspec |
 
 Nothing in §3–§5 can proceed until these exist.
@@ -70,7 +70,7 @@ git add .
 git commit -m "Liquid Glass bottom nav plugin and installer CLI"
 
 # create the repo on GitHub first, then:
-git remote add origin https://github.com/<you>/liquid_glass_bottom_nav.git
+git remote add origin https://github.com/<you>/liquid_glass_bottom_nav_native.git
 git push -u origin main
 ```
 
@@ -89,7 +89,7 @@ application.)
 
 ## 3. Fill in the package metadata
 
-### 3a. License — `packages/liquid_glass_bottom_nav/LICENSE`
+### 3a. License — `packages/liquid_glass_bottom_nav_native/LICENSE`
 
 Currently the file contains exactly one line: `TODO: Add your license here.`
 That is legally meaningless and will hurt the pub.dev score. Replace it, e.g.
@@ -125,16 +125,16 @@ Copy the same file to `packages/liquid_glass_bottom_nav_cli/LICENSE`.
 
 Each pubspec has a commented-out placeholder. Uncomment and fill in:
 
-`packages/liquid_glass_bottom_nav/pubspec.yaml`
+`packages/liquid_glass_bottom_nav_native/pubspec.yaml`
 
 ```yaml
-repository: https://github.com/<you>/liquid_glass_bottom_nav
+repository: https://github.com/<you>/liquid_glass_bottom_nav_native
 ```
 
 `packages/liquid_glass_bottom_nav_cli/pubspec.yaml`
 
 ```yaml
-repository: https://github.com/<you>/liquid_glass_bottom_nav
+repository: https://github.com/<you>/liquid_glass_bottom_nav_native
 ```
 
 This is the **only** remaining warning from `pub publish --dry-run`.
@@ -144,7 +144,7 @@ Then set the same URL as the clone target for `liquid_glass bootstrap`, in
 
 ```dart
 const projectRepository =
-    'https://github.com/<you>/liquid_glass_bottom_nav.git';
+    'https://github.com/<you>/liquid_glass_bottom_nav_native.git';
 ```
 
 Until this is filled in, `bootstrap` exits with a clear error rather than
@@ -152,7 +152,7 @@ attempting to clone a placeholder URL.
 
 ### 3c. Podspec metadata
 
-`packages/liquid_glass_bottom_nav/ios/liquid_glass_bottom_nav.podspec`, lines
+`packages/liquid_glass_bottom_nav_native/ios/liquid_glass_bottom_nav_native.podspec`, lines
 13–15 still hold the `flutter create` placeholders:
 
 ```ruby
@@ -169,7 +169,7 @@ CocoaPods. Fix it anyway so consumers on CocoaPods are not broken.
 
 ```sh
 # plugin
-cd packages/liquid_glass_bottom_nav
+cd packages/liquid_glass_bottom_nav_native
 flutter analyze
 flutter pub publish --dry-run        # must report 0 warnings
 
@@ -185,7 +185,7 @@ flutter analyze
 ```
 
 Also confirm the package name is free — open
-<https://pub.dev/packages/liquid_glass_bottom_nav>. A 404 means it is
+<https://pub.dev/packages/liquid_glass_bottom_nav_native>. A 404 means it is
 available.
 
 ---
@@ -194,10 +194,10 @@ available.
 
 Publish the **plugin first**. The CLI does not depend on it at build time (it
 is pure Dart), but `liquid_glass create` runs `flutter pub add
-liquid_glass_bottom_nav`, which fails until the plugin is live.
+liquid_glass_bottom_nav_native`, which fails until the plugin is live.
 
 ```sh
-cd packages/liquid_glass_bottom_nav
+cd packages/liquid_glass_bottom_nav_native
 flutter pub publish
 
 cd ../liquid_glass_bottom_nav_cli
@@ -213,11 +213,11 @@ local path. Keep local development working with an override:
 `/pubspec.yaml`
 ```yaml
 dependencies:
-  liquid_glass_bottom_nav: ^0.1.0
+  liquid_glass_bottom_nav_native: ^0.1.0
 
 dependency_overrides:
-  liquid_glass_bottom_nav:
-    path: packages/liquid_glass_bottom_nav
+  liquid_glass_bottom_nav_native:
+    path: packages/liquid_glass_bottom_nav_native
 ```
 
 ---
@@ -293,7 +293,7 @@ Verify: `liquid_glass --help`
 
 ```sh
 liquid_glass bootstrap
-cd liquid_glass_bottom_nav
+cd liquid_glass_bottom_nav_native
 flutter run
 ```
 
@@ -322,7 +322,7 @@ source and the CLI, all resolved and ready to run:
 
 ```sh
 liquid_glass bootstrap
-cd liquid_glass_bottom_nav && flutter run
+cd liquid_glass_bottom_nav_native && flutter run
 ```
 
 It clones the repository and runs `pub get` in every package it finds,
@@ -381,7 +381,7 @@ dart pub global activate --source path .
 
 cd /tmp
 liquid_glass create demo_app \
-  --plugin-path /Users/prasantashil/Downloads/untitled/packages/liquid_glass_bottom_nav
+  --plugin-path /Users/prasantashil/Downloads/untitled/packages/liquid_glass_bottom_nav_native
 cd demo_app && flutter run
 ```
 

@@ -1,6 +1,6 @@
 # liquid_glass_bottom_nav_cli
 
-One command to install [`liquid_glass_bottom_nav`][plugin] into a Flutter
+One command to install [`liquid_glass_bottom_nav_native`][plugin] into a Flutter
 project and configure the native iOS side it needs.
 
 ## Install the command
@@ -65,7 +65,7 @@ liquid_glass install
 This will:
 
 1. Find the project root by walking up from the current directory.
-2. Run `flutter pub add liquid_glass_bottom_nav`, then `flutter pub get`.
+2. Run `flutter pub add liquid_glass_bottom_nav_native`, then `flutter pub get`.
 3. Raise `IPHONEOS_DEPLOYMENT_TARGET` to 16.0 in `ios/Runner.xcodeproj` if it
    is lower, and the `platform :ios` line in your `Podfile` if you have one.
    **The originals are saved alongside as `.bak`.** Pass `--no-ios-config` to
@@ -89,7 +89,7 @@ Liquid Glass. `doctor` tells you which one you are going to get, and why:
 ```
 Project
   [ok]   Flutter project at /Users/you/my_app
-  [ok]   liquid_glass_bottom_nav declared in pubspec.yaml
+  [ok]   liquid_glass_bottom_nav_native declared in pubspec.yaml
 
 iOS project
   [ok]   Deployment target 16.0
@@ -111,4 +111,4 @@ is decided at runtime by the device's OS version, so a project targeting iOS
 `doctor` exits non-zero when something is actually broken, so it is safe to
 put in CI.
 
-[plugin]: https://pub.dev/packages/liquid_glass_bottom_nav
+[plugin]: https://pub.dev/packages/liquid_glass_bottom_nav_native

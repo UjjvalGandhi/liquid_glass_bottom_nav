@@ -10,7 +10,7 @@ Future<void> main(List<String> arguments) async {
   final runner =
       CommandRunner<int>(
           'liquid_glass',
-          'Install liquid_glass_bottom_nav into a Flutter project and check '
+          'Install liquid_glass_bottom_nav_native into a Flutter project and check '
               'that the native iOS side is configured to render it.',
         )
         ..addCommand(BootstrapCommand())

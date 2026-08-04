@@ -1,6 +1,6 @@
-# liquid_glass_bottom_nav_example
+# liquid_glass_bottom_nav_native_example
 
-Demonstrates how to use the liquid_glass_bottom_nav plugin.
+Demonstrates how to use the liquid_glass_bottom_nav_native plugin.
 
 ## Getting Started
 

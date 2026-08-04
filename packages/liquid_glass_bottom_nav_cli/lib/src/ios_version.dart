@@ -1,4 +1,4 @@
-/// Lowest iOS version `liquid_glass_bottom_nav` builds against.
+/// Lowest iOS version `liquid_glass_bottom_nav_native` builds against.
 const minimumDeploymentTarget = IosVersion(16, 0);
 
 /// Lowest iOS version that renders the Liquid Glass treatment.
