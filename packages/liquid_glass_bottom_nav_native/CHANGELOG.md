@@ -1,3 +1,10 @@
+## 0.2.0
+
+* Add `trailingButtonSymbol`, `trailingButtonTitle` and
+  `onTrailingButtonTapped` to `LiquidGlassBottomNav`. Repurposes the search
+  tab's separated-circle Liquid Glass treatment as a plain action button
+  when a symbol is set. Mutually exclusive with `showSearchTab`.
+
 ## 0.1.0
 
 * Initial release.
