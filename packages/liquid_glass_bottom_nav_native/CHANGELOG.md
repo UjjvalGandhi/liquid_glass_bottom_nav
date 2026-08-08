@@ -1,3 +1,8 @@
+## 0.2.1
+
+* Fix demo GIF not rendering on pub.dev by using an absolute GitHub raw URL
+  in the README instead of a relative path.
+
 ## 0.2.0
 
 * Add `trailingButtonSymbol`, `trailingButtonTitle` and
