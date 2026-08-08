@@ -40,6 +40,9 @@ class LiquidGlassBottomNav extends StatefulWidget {
     this.showSearchTab = true,
     this.searchPlaceholder = 'Search',
     this.collapsedHeight = 112,
+    this.trailingButtonSymbol,
+    this.trailingButtonTitle = '',
+    this.onTrailingButtonTapped,
     this.onTabSelected,
     this.onSearchActivated,
     this.onSearchDismissed,
@@ -54,13 +57,24 @@ class LiquidGlassBottomNav extends StatefulWidget {
   final int selectedIndex;
 
   /// Adds the system search tab: the separate circular glass button that
-  /// expands into the native search field when tapped.
+  /// expands into the native search field when tapped. Ignored when
+  /// [trailingButtonSymbol] is set.
   final bool showSearchTab;
 
   final String searchPlaceholder;
 
   /// Height of the bar strip when search is closed.
   final double collapsedHeight;
+
+  /// When set, replaces the search tab with a separated glass button using
+  /// this SF Symbol — same native placement/treatment as the search button,
+  /// but it fires [onTrailingButtonTapped] instead of opening search.
+  /// Mutually exclusive with [showSearchTab].
+  final String? trailingButtonSymbol;
+
+  final String trailingButtonTitle;
+
+  final VoidCallback? onTrailingButtonTapped;
 
   final ValueChanged<int>? onTabSelected;
   final VoidCallback? onSearchActivated;
@@ -108,6 +122,8 @@ class _LiquidGlassBottomNavState extends State<LiquidGlassBottomNav> {
         widget.onSearchDismissed?.call();
       case 'searchChanged':
         widget.onSearchChanged?.call(call.arguments as String? ?? '');
+      case 'trailingButtonTapped':
+        widget.onTrailingButtonTapped?.call();
     }
   }
 
@@ -134,6 +150,10 @@ class _LiquidGlassBottomNavState extends State<LiquidGlassBottomNav> {
           'selectedIndex': widget.selectedIndex,
           'showSearchTab': widget.showSearchTab,
           'searchPlaceholder': widget.searchPlaceholder,
+          if (widget.trailingButtonSymbol case final symbol?) ...{
+            'trailingButtonSymbol': symbol,
+            'trailingButtonTitle': widget.trailingButtonTitle,
+          },
         },
         creationParamsCodec: const StandardMessageCodec(),
         onPlatformViewCreated: _onPlatformViewCreated,

@@ -206,6 +206,11 @@ private final class ModernBottomNavView: BottomNavHostView, UITabBarControllerDe
   private var contentTabs: [UITab] = []
   private var lastContentTab: UITab?
   private weak var searchController: UISearchController?
+  /// A `UISearchTab` repurposed as a plain action button: it inherits the
+  /// system's separated-circle Liquid Glass treatment (only granted to
+  /// search tabs by the public API), but its icon/title are overridden and
+  /// selecting it fires a callback instead of opening search.
+  private var actionTab: UITab?
 
   override func configureTabs(params: [String: Any]) {
     let placeholder: (UITab) -> UIViewController = { _ in
@@ -227,7 +232,17 @@ private final class ModernBottomNavView: BottomNavHostView, UITabBarControllerDe
     guard !contentTabs.isEmpty else { return }
 
     var tabs = contentTabs
-    if params["showSearchTab"] as? Bool ?? true {
+    if let symbol = params["trailingButtonSymbol"] as? String {
+      let action = UISearchTab { _ in
+        let controller = UIViewController()
+        controller.view.backgroundColor = .clear
+        return controller
+      }
+      action.title = params["trailingButtonTitle"] as? String ?? ""
+      action.image = tabImage(named: symbol)
+      actionTab = action
+      tabs.append(action)
+    } else if params["showSearchTab"] as? Bool ?? true {
       // The search tab hosts a real UISearchController with integrated
       // placement, so tapping the circular button morphs it into the
       // system search field. automaticallyActivatesSearch also restores
@@ -258,6 +273,18 @@ private final class ModernBottomNavView: BottomNavHostView, UITabBarControllerDe
     didSelectTab selectedTab: UITab,
     previousTab: UITab?
   ) {
+    if selectedTab === actionTab {
+      // Not a real content tab — fire the callback, then snap the
+      // selection back so the UI never actually navigates onto it.
+      channel.invokeMethod("trailingButtonTapped", arguments: nil)
+      if let lastContentTab {
+        DispatchQueue.main.async { [weak self] in
+          self?.tabBarController.selectedTab = lastContentTab
+        }
+      }
+      return
+    }
+
     if selectedTab is UISearchTab {
       // The Flutter side grows the platform view to full screen so the
       // expanded search field and keyboard have room to render.

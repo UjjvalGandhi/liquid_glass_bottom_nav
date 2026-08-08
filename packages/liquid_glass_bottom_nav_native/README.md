@@ -1,5 +1,7 @@
 # liquid_glass_bottom_nav_native
 
+![Demo](assets/demo.gif)
+
 Native iOS 26 Liquid Glass bottom tab bar for Flutter.
 
 Embeds a real `UITabBarController` in a platform view, so the bar is
